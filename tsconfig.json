@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "./dist/",
+    "forceConsistentCasingInFileNames": true,
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "preserve",
+    "lib": ["es5", "es6", "dom", "ES2021.String"],
+    "resolveJsonModule": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+      "declaration": true,
+    }
+}
