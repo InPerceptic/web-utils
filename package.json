@@ -8,7 +8,7 @@
     "build": "tsc --build tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy-types": "copyfiles -u 1 \"src/**/*.d.ts\" dist",
-    "patch": "npm version patch -m \"Upgrade version to %s\"",
+    "patch": "npm run build && npm version patch -m \"Upgrade version to %s\"",
     "publish": "npm publish --registry=https://npm.pkg.github.com/",
     "push-tag": "git push && git push --tags"
   },
