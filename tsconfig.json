@@ -6,7 +6,7 @@
     "target": "es6",
     "module": "commonjs",
     "jsx": "preserve",
-    "lib": ["es5", "es6", "dom", "ES2021.String"],
+    "lib": ["es5", "es6", "dom", "es2020.string"],
     "resolveJsonModule": true,
     "strict": true,
     "noImplicitAny": true,
