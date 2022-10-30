@@ -1,0 +1,29 @@
+{
+  "name": "web-utils",
+  "version": "0.0.1",
+  "description": "Web development utility functions and types",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InPerceptic/web-utils.git"
+  },
+  "keywords": [
+    "web",
+    "utils"
+  ],
+  "author": "adam.walkowski@inpercepti.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/InPerceptic/web-utils/issues"
+  },
+  "homepage": "http://inperceptic.com",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
