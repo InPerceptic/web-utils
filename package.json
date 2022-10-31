@@ -20,11 +20,14 @@
     "web",
     "utils"
   ],
-  "author": "adam.walkowski@inpercepti.com",
+  "author": "adam.walkowski@inperceptic.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/InPerceptic/web-utils/issues"
   },
+  "files": [
+    "dist"
+  ],
   "homepage": "http://inperceptic.com",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/InPerceptic/"
