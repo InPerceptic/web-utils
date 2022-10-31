@@ -29,6 +29,9 @@
     "dist"
   ],
   "homepage": "http://inperceptic.com",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/InPerceptic/"
+  },
   "devDependencies": {
     "copyfiles": "^2.4.1",
     "prettier": "^2.7.1"
