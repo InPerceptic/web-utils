@@ -50,7 +50,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@InPerceptic'
       - name: Authenticate with GitHub package registry
-        run: echo "//npm.pkg.github.com:_authToken=${{ secrets.PAT }}" >
+        run: echo "//npm.pkg.github.com:_authToken=${{ secrets.PUBLIC_ACCESS_TOKEN }}" >
           ~/.npmrc
 
       - name: Install packages
