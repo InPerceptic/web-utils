@@ -1,6 +1,6 @@
 {
   "name": "@InPerceptic/web-utils",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Web development utility functions and types",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -29,7 +29,6 @@
     "dist"
   ],
   "homepage": "http://inperceptic.com",
-
   "devDependencies": {
     "copyfiles": "^2.4.1",
     "prettier": "^2.7.1"
