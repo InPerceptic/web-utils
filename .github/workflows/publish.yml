@@ -36,23 +36,29 @@ jobs:
       #   with:
       #     node-version: 18.x
       #     registry-url: 'https://registry.npmjs.org'
-      - name: Install packages
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Setup .npmrc file to publish to GitHub Packages
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@InPerceptic'
+
       # - name: Install dependencies
       #   run: |
       #     echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" > ~/.npmrc
       #     npm ci
       #- run: echo "registry=https://npm.pkg.github.com/@InPerceptic" >> .npmrc
       #- run: npm run addscope
+      - name: Setup .npmrc file to publish to GitHub Packages
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@InPerceptic'
+      - name: Authenticate with GitHub package registry
+        run: echo "//npm.pkg.github.com:_authToken=${{ secrets.PAT }}" >
+          ~/.npmrc
+
+      - name: Install packages
+        run: npm install
+      - name: Build
+        run: npm run build
+
       - name: Publish to GitHub Packages
-        run: npm publish --access public
+        run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.PUBLIC_ACCESS_TOKEN }}
