@@ -31,7 +31,7 @@ jobs:
       - name: Setup .npmrc
         uses: actions/setup-node@v1
         with:
-          node-version: 16.x
+          node-version: 18.x
           registry-url: 'https://registry.npmjs.org'
       - name: Install packages
         run: npm install
@@ -40,7 +40,7 @@ jobs:
       - name: Setup .npmrc file to publish to GitHub Packages
         uses: actions/setup-node@v1
         with:
-          node-version: 16.x
+          node-version: 18.x
           registry-url: 'https://npm.pkg.github.com'
           scope: '@InPerceptic'
       #- run: npm run addscope
