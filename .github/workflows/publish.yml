@@ -1,6 +1,7 @@
 # name: Web Utils Realase & Publish
 
-name: Publish Package to npmjs
+name: publish Web Utils package to NPM
+run-name: publish Web Utils package to NPM
 on:
   release:
     types: [published]
