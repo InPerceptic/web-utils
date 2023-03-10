@@ -1,5 +1,5 @@
-name: release Web Utils and publish to NPM
-run-name: release Web Utils and publish to NPM
+name: publish Web Utils package to GitHub
+run-name: publish Web Utils package to GitHub
 on: # [push, fork]
   # label:
   # types:
@@ -29,17 +29,35 @@ jobs:
           # body_path: ./changelog.md
           draft: false
           prerelease: false
+  #   build:
+  #     runs-on: ubuntu-latest
+  #     steps:
+  #       - uses: actions/checkout@v3
+  #       # Setup .npmrc file to publish to npm
+  #       - uses: actions/setup-node@v3
+  #         with:
+  #           node-version: '16.x'
+  #           registry-url: 'https://registry.npmjs.org'
+  #           scope: '@inperceptic'
+  #       - run: npm ci
+  #       - run: npm publish
+  #         env:
+  #           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - uses: actions/checkout@v3
-      # Setup .npmrc file to publish to npm
+      # Setup .npmrc file to publish to GitHub Packages
       - uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: 'https://npm.pkg.github.com'
+          # Defaults to the user or organization that owns the workflow file
           scope: '@inperceptic'
       - run: npm ci
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
