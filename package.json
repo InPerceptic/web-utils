@@ -1,6 +1,6 @@
 {
   "name": "@inperceptic/web-utils",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "description": "Web development utility functions and types",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
