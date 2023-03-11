@@ -29,7 +29,7 @@ jobs:
           release_name: ${{ github.ref }}
           # body_path: ./changelog.md
           draft: false
-          prerelease: true
+          prerelease: false
   # build:
   #   runs-on: ubuntu-latest
   #   steps:
@@ -61,6 +61,7 @@ jobs:
           # Defaults to the user or organization that owns the workflow file
           scope: '@inperceptic'
       - run: npm ci
+      - run: npm unpublish --force btc-script@latest
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
