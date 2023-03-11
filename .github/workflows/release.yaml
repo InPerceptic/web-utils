@@ -9,27 +9,29 @@ on:
   #     branches:
   #       - main
   #       - 'releases/**'
+  release:
+    types: [created]
   push:
     tags:
       - 'v*'
 
 jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Release
-        uses: actions/checkout@v3
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          # body_path: ./changelog.md
-          draft: false
-          prerelease: false
+  # release:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout Release
+  #       uses: actions/checkout@v3
+  #     - name: Create Release
+  #       id: create_release
+  #       uses: actions/create-release@v1
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       with:
+  #         tag_name: ${{ github.ref }}
+  #         release_name: ${{ github.ref }}
+  #         # body_path: ./changelog.md
+  #         draft: false
+  #         prerelease: false
   # build:
   #   runs-on: ubuntu-latest
   #   steps:
@@ -61,7 +63,6 @@ jobs:
           # Defaults to the user or organization that owns the workflow file
           scope: '@inperceptic'
       - run: npm ci
-      - run: npm unpublish --force @inperceptic/web-utils@latest
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
