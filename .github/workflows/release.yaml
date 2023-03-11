@@ -11,9 +11,9 @@ on:
   #       - 'releases/**'
   release:
     types: [created]
-  push:
-    tags:
-      - 'v*'
+  # push:
+  #   tags:
+  #     - 'v*'
 
 jobs:
   # release:
