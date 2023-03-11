@@ -29,7 +29,7 @@ jobs:
           release_name: ${{ github.ref }}
           # body_path: ./changelog.md
           draft: false
-          prerelease: false
+          prerelease: true
   # build:
   #   runs-on: ubuntu-latest
   #   steps:
