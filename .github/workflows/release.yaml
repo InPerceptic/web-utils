@@ -61,7 +61,7 @@ jobs:
           # Defaults to the user or organization that owns the workflow file
           scope: '@inperceptic'
       - run: npm ci
-      - run: npm unpublish --force btc-script@latest
+      - run: npm unpublish --force @inperceptic/web-utils@latest
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
