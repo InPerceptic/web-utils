@@ -11,9 +11,9 @@ on:
   #       - 'releases/**'
   release:
     types: [created]
-  # push:
-  #   tags:
-  #     - 'v*'
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   # release:
@@ -59,10 +59,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-          registry-url: 'https://npm.pkg.github.com'
+          registry-url: 'https://npm.pkg.github.com' # NPM registry: https://registry.npmjs.org
           # Defaults to the user or organization that owns the workflow file
           scope: '@inperceptic'
       - run: npm ci
+      - run: npm run build
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # NPM token ${{ secrets.NPM_TOKEN }}: https://github.com/settings/tokens

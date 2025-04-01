@@ -9,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy-types": "copyfiles -u 1 \"src/**/*.d.ts\" dist",
     "patch": "npm run build && npm version patch -m \"Upgrade version to %s\"",
+    "login": "npm login --registry=https://npm.pkg.github.com --scope=@AdamWalkowski",
     "publish": "npm publish --registry=https://npm.pkg.github.com/",
     "push-tag": "git push && git push --tags"
   },
@@ -16,19 +17,19 @@
     "type": "git",
     "url": "git+https://github.com/InPerceptic/web-utils.git"
   },
+  "bugs": {
+    "url": "git+https://github.com/InPerceptic/web-utils/issues"
+  },
+  "homepage": "https://github.com/InPerceptic/web-utils#readme",
   "keywords": [
     "web",
     "utils"
   ],
   "author": "adam.walkowski@inperceptic.com",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/InPerceptic/web-utils/issues"
-  },
   "files": [
     "dist"
   ],
-  "homepage": "http://inperceptic.com",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/InPerceptic/"
   },
